@@ -1,6 +1,6 @@
 ## Prerequisites
 
-- [Docker Desktop]([http://](https://docs.docker.com/get-docker/))
+- [Docker Desktop]([http://](https://docs.docker.com/get-docker/)
 
 
 ## Testing
