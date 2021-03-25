@@ -19,24 +19,18 @@ describe('solve', () => {
 });
 
 describe('solveInputs', () => {
-    test('[5, one, two, three, four, five]', () => {
+    test('sample.in', () => {
         expect(
-            template.solveInputs([
-                '5',
-                'one',
-                'two',
-                'three',
-                'four',
-                'five',
-            ])
+            template.solveInputs(`3
+one
+two
+three`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
                 'Case #1: one',
                 'Case #2: two',
                 'Case #3: three',
-                'Case #4: four',
-                'Case #5: five',
             ]
         );
     });
