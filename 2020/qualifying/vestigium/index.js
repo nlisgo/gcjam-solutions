@@ -22,7 +22,30 @@ const solve = rows => {
     return [k, r, c];
 };
 
-/// Given the rows of a latin square return the trace (k).
+const solveInputs = inputs => {
+	const cases = [];
+
+    let x = 0;
+    // Discard the first line of inputs.
+    inputs = inputs.slice(1);
+    inputs.forEach((data, i) => {
+        // If the line contains a single integer.
+        if (Number.parseInt(data) == data) {
+            x++;
+            // Collect the rows of the latin square.
+            const rows = [];
+            for (let j = 1; j <= inputs[i]; j++) {
+                rows.push(inputs[i+j].split(' '));
+            }
+            // Prepare output the case after passing rows to solve method above.
+            cases.push(`Case #${x}: ${solve(rows).join(' ')}`);
+        }
+    });
+
+	return cases;
+};
+
+// Given the rows of a latin square return the trace (k).
 const calculateTrace = latinSquares => {
     let trace = 0;
     for (let i = 0; i < latinSquares.length; i++) {
@@ -50,24 +73,15 @@ if (!Boolean(process.stdin.isTTY)) {
     rl.on('line', line => {
         inputs.push(line);
     }).on('close', () => {
-        let x = 0;
-        // Discard the first line of inputs.
-        inputs = inputs.slice(1);
-        inputs.forEach((data, i) => {
-            // If the line contains a single integer.
-            if (Number.parseInt(data) == data) {
-                x++;
-                // Collect the rows of the latin square.
-                const rows = [];
-                for (let j = 1; j <= inputs[i]; j++) {
-                    rows.push(inputs[i+j].split(' '));
-                }
-                // Output the case after passing rows to solve method above.
-                console.log(`Case #${x}: ${solve(rows).join(' ')}`);
-            }
-        });
+        // Prepare output.
+		solveInputs(inputs).forEach(out => {
+			console.log(out);
+		});
     });
 } else {
-    // Export as module for tests to work on solve method.
-	module.exports = solve;
+    // Export as module for tests to work on solve and other methods.
+	module.exports = {
+        solve,
+        solveInputs,
+    };
 }
