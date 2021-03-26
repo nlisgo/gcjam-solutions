@@ -1,4 +1,4 @@
-name: CI 2021
+name: CI
 
 on:
   push:
@@ -22,7 +22,13 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
 
-    - name: npm install and test
+    - name: gcjam 2020 - npm install and test
+      run: |
+        cd 2020/test
+        npm install
+        npm test
+
+    - name: gcjam 2021 - npm install and test
       run: |
         cd 2021/test
         npm install
