@@ -24,6 +24,7 @@ jobs:
 
     - name: npm install and test
       run: |
+        pwd
         cd 2020/test
         npm install
         npm test
