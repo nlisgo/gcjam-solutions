@@ -57,8 +57,7 @@ const calculateTrace = latinSquares => {
 // Detect if a duplicate is found in an array.
 const duplicateFound = values => values.length > values.filter((v, i, a) => a.indexOf(v) === i).length;
 
-// If stdin is detected.
-if (!Boolean(process.stdin.isTTY)) {
+const handleStdin = () => {
 	const readline = require('readline');
 
     let inputs = [];
@@ -78,10 +77,14 @@ if (!Boolean(process.stdin.isTTY)) {
 			console.log(out);
 		});
     });
-} else {
-    // Export as module for tests to work on solve and other methods.
-	module.exports = {
-        solve,
-        solveInputs,
-    };
+};
+
+// Process stdin if detected.
+if (!Boolean(process.stdin.isTTY)) {
+	handleStdin();
 }
+
+module.exports = {
+	solve,
+	solveInputs,
+};

@@ -35,6 +35,6 @@ if (!Boolean(process.stdin.isTTY)) {
     }).on('close', () => {
         inputs.slice(1).forEach((data, i) => console.log(`Case #${i.toCase()}: ${solve(data)}`));
     });
-} else {
-	module.exports = solve;
 }
+
+module.exports = solve;

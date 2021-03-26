@@ -63,6 +63,6 @@ if (!Boolean(process.stdin.isTTY)) {
             }
         });
     });
-} else {
-	module.exports = solve;
 }
+
+module.exports = solve;
