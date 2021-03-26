@@ -14,6 +14,28 @@ const solveInputs = inputs => {
 	return cases;
 };
 
+const handleStdin = () => {
+	const readline = require('readline');
+	
+	const inputs = [];
+	
+	const rl = readline.createInterface({
+	  input: process.stdin
+	});
+	
+	rl.on('line', line => {
+		inputs.push(line);
+	}).on('close', () => {
+		solveInputs(inputs).forEach(out => {
+			console.log(out);
+		});
+	});
+};
+
+if (!Boolean(process.stdin.isTTY)) {
+	handleStdin();
+}
+
 module.exports = {
 	solve,
 	solveInputs,
