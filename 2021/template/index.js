@@ -14,27 +14,7 @@ const solveInputs = inputs => {
 	return cases;
 };
 
-if (!Boolean(process.stdin.isTTY)) {
-	const readline = require('readline');
-	
-	const inputs = [];
-	
-	const rl = readline.createInterface({
-	  input: process.stdin,
-	  output: process.stdout,
-	  terminal: false
-	});
-	
-	rl.on('line', line => {
-		inputs.push(line);
-	}).on('close', () => {
-		solveInputs(inputs).forEach(out => {
-			console.log(out);
-		});
-	});
-} else {
-	module.exports = {
-		solve,
-		solveInputs,
-	};
-}
+module.exports = {
+	solve,
+	solveInputs,
+};
