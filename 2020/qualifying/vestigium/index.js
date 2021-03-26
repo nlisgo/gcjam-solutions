@@ -63,9 +63,7 @@ const handleStdin = () => {
     let inputs = [];
 
     const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-        terminal: false,
+        input: process.stdin
     });
 
     // Read each line into the array inputs.
