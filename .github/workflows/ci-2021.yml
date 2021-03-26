@@ -13,16 +13,16 @@ jobs:
     strategy:
       matrix:
         node_version: ['8', '10', '12']
-        os: [macos-latest, ubuntu-latest, ubuntu-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node_version }}
 
-    - name: npm install, build and test
+    - name: npm install and test
       run: |
         cd 2021/test
         npm install
