@@ -8,28 +8,23 @@ on:
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node_version }} on os ${{ matrix.os }}
+    name: Test on os ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: ['10', '12', '15']
         os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node_version }}
 
     - name: gcjam 2020 - npm install and test
       run: |
-        cd 2020/test
-        npm install
-        npm test
+        cd 2020
+        docker run -v $(pwd):/app -w /app/test node npm install
+        docker run -it -v $(pwd):/app -w /app/test node npm test
 
     - name: gcjam 2021 - npm install and test
       run: |
-        cd 2021/test
-        npm install
-        npm test
+        cd 2021
+        docker run -v $(pwd):/app -w /app/test node npm install
+        docker run -it -v $(pwd):/app -w /app/test node npm test
