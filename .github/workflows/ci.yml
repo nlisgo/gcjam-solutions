@@ -7,34 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
-
-  ubuntu:
+  test:
     name: Test on ubuntu-18.04
     runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: gcjam 2020 - npm install and test
-      run: docker run -v $(pwd)/2020:/app -w /app/test node /bin/bash -c "npm install && npm test"
-
-    - name: gcjam 2021 - npm install and test
-      run: docker run -v $(pwd)/2021:/app -w /app/test node /bin/bash -c "npm install && npm test"
-
-  macos:
-    name: Test on macos-latest
-    runs-on: macos-latest
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Install docker
-      run: |
-        mkdir -p ~/.docker/machine/cache
-        curl -Lo ~/.docker/machine/cache/boot2docker.iso https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso
-        brew install docker docker-machine
-        docker-machine create --driver virtualbox default
-        docker-machine env default
 
     - name: gcjam 2020 - npm install and test
       run: docker run -v $(pwd)/2020:/app -w /app/test node /bin/bash -c "npm install && npm test"
