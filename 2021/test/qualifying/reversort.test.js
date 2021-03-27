@@ -4,6 +4,10 @@ describe('solve', () => {
     test('[4, 2, 1, 3]', () => {
         expect(reversort.solve([4, 2, 1, 3])).toBe(6);
     });
+
+    test('[4, 3, 2, 1]', () => {
+        expect(reversort.solve([4, 2, 1, 3])).toBe(6);
+    });
     
     test('[1, 2]', () => {
         expect(reversort.solve([1, 2])).toBe(1);

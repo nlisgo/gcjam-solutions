@@ -43,3 +43,31 @@ describe('solveInputs', () => {
         );
     });
 });
+
+describe('possible', () => {
+    test('4, 6', () => {
+        expect(reversort.possible(4, 6)).toBe(true);
+    });
+    
+    test('2, 1', () => {
+        expect(reversort.possible(2, 1)).toBe(true);
+    });
+    
+    test('7, 12', () => {
+        expect(reversort.possible(7, 12)).toBe(true);
+    });
+    
+    test('7, 2', () => {
+        expect(reversort.possible(7, 2)).toBe(false);
+    });
+    
+    test('2, 1000', () => {
+        expect(reversort.possible(2, 1000)).toBe(false);
+    });
+});
+
+describe('performReverse', () => {
+    test('[4, 2, 1, 3], 0, 2', () => {
+        expect(reversort.performReverse([4, 2, 1, 3], 0, 2)).toStrictEqual([1, 2, 4, 3]);
+    });
+});
