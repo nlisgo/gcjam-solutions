@@ -41,3 +41,15 @@ to run the tests:
 ```
 docker run -it -v $(pwd):/app -w /app/test node npm test qualifying/reversort.test.js
 ```
+
+## Reversort engineering
+
+```
+cat ./qualifying/reversort-engineering/sample.in | docker run -i -v $(pwd):/app -w /app/qualifying/reversort-engineering node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test qualifying/reversort-engineering.test.js
+```
