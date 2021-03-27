@@ -1,36 +1,44 @@
 const reversort = require('../../qualifying/reversort-engineering/index');
 
 describe('solve', () => {
-    test('one', () => {
-        expect(reversort.solve('one')).toBe('one');
+    test('4, 6', () => {
+        expect(reversort.solve(4, 6)).toBe([4, 3, 2, 1]);
     });
     
-    test('two', () => {
-        expect(reversort.solve('two')).toBe('two');
+    test('2, 1', () => {
+        expect(reversort.solve(2, 1)).toBe([1, 2]);
     });
     
-    test('three', () => {
-        expect(reversort.solve('three')).toBe('three');
+    test('7, 12', () => {
+        expect(reversort.solve(7, 12)).toBe([7, 6, 5, 4, 3, 2, 1]);
     });
     
-    test('four', () => {
-        expect(reversort.solve('four')).toBe('four');
+    test('7, 2', () => {
+        expect(reversort.solve(7, 2)).toBe(['IMPOSSIBLE']);
+    });
+    
+    test('2, 1000', () => {
+        expect(reversort.solve(2, 1000)).toBe(['IMPOSSIBLE']);
     });
 });
 
 describe('solveInputs', () => {
     test('sample.in', () => {
         expect(
-            reversort.solveInputs(`3
-one
-two
-three`.split(/\r?\n/))
+            reversort.solveInputs(`5
+4 6
+2 1
+7 12
+7 2
+2 1000`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'Case #1: one',
-                'Case #2: two',
-                'Case #3: three',
+                'Case #1: 4 3 2 1',
+                'Case #2: 1 2',
+                'Case #3: 7 6 5 4 3 2 1',
+                'Case #4: IMPOSSIBLE',
+                'Case #5: IMPOSSIBLE',
             ]
         );
     });
