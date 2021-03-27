@@ -7,11 +7,38 @@ const solve = (len, cost) => {
 		return ['IMPOSSIBLE'];
 	}
 
-	for (let i = 0; i < len - 1; i ++) {
+	const right = [];
+	const left = [];
 
+	let remaining = range(1, len);
+	let costRemaining = cost;
+
+	while (costRemaining > 0) {
+		console.log([costRemaining, remaining.length, remaining.length * 2 - 2]);
+		if (costRemaining === remaining.length - 1) {
+			costRemaining = 0;
+		} else if (costRemaining >= remaining.length * 2 - 2) {
+			if (right.length === left.length) {
+				right.push(remaining[0]);
+				remaining = [...remaining.slice(1).reverse()];
+			} else {
+				left.push(remaining[remaining.length - 1]);
+				remaining = [...remaining.reverse().slice(1)];
+			}
+			costRemaining -= remaining.length;
+		} else {
+			costRemaining -= (remaining.length - 2);
+			if (right.length === left.length) {
+				console.log([left, remaining, right.reverse()]);
+				console.log(costRemaining);
+			} else {
+				console.log([left, remaining, right.reverse()]);
+				console.log(costRemaining);
+			}
+		}
 	}
 
-	return [len];
+	return left.concat(remaining, right.reverse());
 };
 
 const solveInputs = inputs => {
@@ -21,27 +48,10 @@ const solveInputs = inputs => {
 	});
 	return cases;
 };
-const performReverse = (values, i, j) => {
-	if (j === i) {
-		return values;
-	}
-
-	const newValues = (i > 0) ? values.slice(0, i) : [];
-
-	for (let k = j; k >= i; k--) {
-		newValues.push(values[k]);
-	}
-
-	if (j < values.length - 1) {
-		for (let k = j + 1; k < values.length; k++) {
-			newValues.push(values[k]);
-		}
-	}
-
-	return newValues;
-};
 
 const possible = (len, cost) => Boolean(cost >= len - 1 && cost < (len + 1) * len * 0.5);
+
+const range = (start, end) => [...new Array(end-start+1).fill().map((el, ind) => ind + start)];
 
 const handleStdin = () => {
 	const readline = require('readline');
@@ -69,4 +79,5 @@ module.exports = {
 	solve,
 	solveInputs,
 	possible,
+	range,
 };
