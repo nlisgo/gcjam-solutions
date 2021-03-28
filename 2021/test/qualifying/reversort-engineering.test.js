@@ -1,7 +1,7 @@
 const reversort = require('../../qualifying/reversort-engineering/index');
 
 describe('solve', () => {
-    test.only('4, 6', () => {
+    test('4, 6', () => {
         expect(reversort.solve(4, 6)).toStrictEqual([4, 3, 2, 1]);
     });
     
@@ -19,6 +19,42 @@ describe('solve', () => {
     
     test('2, 1000', () => {
         expect(reversort.solve(2, 1000)).toStrictEqual(['IMPOSSIBLE']);
+    });
+
+    test('4, 2', () => {
+        expect(reversort.solve(4, 2)).toStrictEqual(['IMPOSSIBLE']);
+    });
+
+    test('4, 3', () => {
+        expect(reversort.solve(4, 3)).toStrictEqual([1, 2, 3, 4]);
+    });
+
+    test('4, 4', () => {
+        expect(reversort.solve(4, 4)).toStrictEqual([2, 1, 3, 4]);
+    });
+
+    test('4, 5', () => {
+        expect(reversort.solve(4, 5)).toStrictEqual([3, 2, 1, 4]);
+    });
+
+    test('4, 6', () => {
+        expect(reversort.solve(4, 6)).toStrictEqual([4, 3, 2, 1]);
+    });
+
+    test('4, 7', () => {
+        expect(reversort.solve(4, 7)).toStrictEqual([3, 4, 2, 1]);
+    });
+
+    test('4, 8', () => {
+        expect(reversort.solve(4, 8)).toStrictEqual([2, 3, 4, 1]);
+    });
+
+    test('4, 9', () => {
+        expect(reversort.solve(4, 9)).toStrictEqual([2, 4, 3, 1]);
+    });
+
+    test('4, 10', () => {
+        expect(reversort.solve(4, 10)).toStrictEqual(['IMPOSSIBLE']);
     });
 });
 
