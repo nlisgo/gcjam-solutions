@@ -14,10 +14,10 @@ const solve = (len, cost) => {
 	let costRemaining = cost;
 
 	while (costRemaining > 0) {
-		console.log([costRemaining, remaining.length, remaining.length * 2 - 2]);
 		if (costRemaining === remaining.length - 1) {
 			costRemaining = 0;
 		} else if (costRemaining >= remaining.length * 2 - 2) {
+			costRemaining -= remaining.length;
 			if (right.length === left.length) {
 				right.push(remaining[0]);
 				remaining = [...remaining.slice(1).reverse()];
@@ -25,16 +25,10 @@ const solve = (len, cost) => {
 				left.push(remaining[remaining.length - 1]);
 				remaining = [...remaining.reverse().slice(1)];
 			}
-			costRemaining -= remaining.length;
 		} else {
-			costRemaining -= (remaining.length - 2);
-			if (right.length === left.length) {
-				console.log([left, remaining, right.reverse()]);
-				console.log(costRemaining);
-			} else {
-				console.log([left, remaining, right.reverse()]);
-				console.log(costRemaining);
-			}
+			let costForThisOperation = costRemaining - remaining.length + 2;
+			remaining = [...remaining.slice(0, costForThisOperation).reverse()].concat([...remaining.reverse().slice(0, remaining.length - costForThisOperation).reverse()]);
+			costRemaining = 0;
 		}
 	}
 
