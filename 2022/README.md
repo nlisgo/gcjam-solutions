@@ -93,3 +93,22 @@ docker run -it -v $(pwd):/app -w /app/test node npm test round-1a/double-or-one-
 <!-- problem-end: round-1a:double-or-one-thing -->
 
 <!-- stage-end: round-1a -->
+## Round 1B
+
+<!-- stage-start: round-1b -->
+
+### pancake-deque
+
+<!-- problem-start: round-1b:pancake-deque -->
+
+```
+cat ./round-1b/pancake-deque/sample.in | docker run -i -v $(pwd):/app -w /app/round-1b/pancake-deque node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test round-1b/pancake-deque.test.js
+```
+
+<!-- problem-end: round-1b:pancake-deque -->
