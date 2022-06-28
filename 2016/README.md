@@ -37,4 +37,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test qualifying/counting-she
 
 <!-- problem-end: qualifying:counting-sheep -->
 
+### Revenge of the Pancakes
+
+<!-- problem-start: qualifying:revenge-of-the-pancakes -->
+
+```
+cat ./qualifying/revenge-of-the-pancakes/sample.in | docker run -i -v $(pwd):/app -w /app/qualifying/revenge-of-the-pancakes node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test qualifying/revenge-of-the-pancakes.test.js
+```
+
+<!-- problem-end: qualifying:revenge-of-the-pancakes -->
+
 <!-- stage-end: qualifying -->
