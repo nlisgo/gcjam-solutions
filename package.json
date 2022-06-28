@@ -1,0 +1,22 @@
+{
+  "name": "gcjam-solutions",
+  "version": "1.0.0",
+  "description": "Solutions for Google Code Jam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlisgo/gcjam-solutions.git"
+  },
+  "author": "nlisgo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlisgo/gcjam-solutions/issues"
+  },
+  "homepage": "https://github.com/nlisgo/gcjam-solutions#readme",
+  "dependencies": {
+    "@nlisgo/gcjam": "^1.0.5"
+  }
+}
