@@ -10,7 +10,18 @@ const solve = input => {
     if (0 === input) {
         return 'INSOMNIA';
     }
-    return input;
+
+    let co = 0;
+    let curr = '';
+    let str = '0123456789';
+    while (str.length > 0) {
+        co++;
+        curr = Array.from(new Set((co * input).toString().split('')));
+        curr.forEach(i => {
+            str = str.replace(i, '');
+        });
+    }
+    return co * input;
 };
 
 /**
