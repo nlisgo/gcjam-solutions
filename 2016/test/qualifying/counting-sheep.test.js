@@ -1,7 +1,7 @@
 const countingSheep = require('../../qualifying/counting-sheep/index');
 
 describe('splitInput', () => {
-    test.only('sample.in', () => {
+    test('sample.in', () => {
         expect(
             countingSheep.splitInput(`5
 0
@@ -23,11 +23,11 @@ describe('splitInput', () => {
 });
 
 describe('solve', () => {
-    test.only('0', () => {
+    test('0', () => {
         expect(countingSheep.solve(0)).toBe('INSOMNIA');
     });
 
-    test.only('1', () => {
+    test('1', () => {
         expect(countingSheep.solve(1)).toBe(10);
     });
 
