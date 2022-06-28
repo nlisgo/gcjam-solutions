@@ -7,7 +7,17 @@ const splitInput = input => input.slice(1);
  * Accepts a single input case and returns the result as a string.
  */
 const solve = input => {
-    return input;
+    let co = 0;
+    let curr = input;
+    let swap = '+';
+    let swapPos = 0;
+    while (curr.indexOf('-') >= 0) {
+        co++;
+        swap = curr.charAt(0) === '-' ? '+' : '-';
+        swapPos = curr.indexOf(swap);
+        curr = (swapPos >= 0) ? swap.repeat(swapPos) + curr.substr(swapPos) : swap.repeat(curr.length);
+    }
+    return co;
 };
 
 /**
