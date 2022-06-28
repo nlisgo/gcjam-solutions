@@ -3,52 +3,64 @@ const revengeOfThePancakes = require('../../qualifying/revenge-of-the-pancakes/i
 describe('splitInput', () => {
     test('sample.in', () => {
         expect(
-            revengeOfThePancakes.splitInput(`3
-one
-two
-three`.split(/\r?\n/))
+            revengeOfThePancakes.splitInput(`5
+-
+-+
++-
++++
+--+-`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'one',
-                'two',
-                'three',
+                '-',
+                '-+',
+                '+-',
+                '+++',
+                '--+-',
             ]
         );
     });
 });
 
 describe('solve', () => {
-    test('one', () => {
-        expect(revengeOfThePancakes.solve('one')).toBe('one');
+    test('-', () => {
+        expect(revengeOfThePancakes.solve('-')).toBe(1);
     });
 
-    test('two', () => {
-        expect(revengeOfThePancakes.solve('two')).toBe('two');
+    test('-+', () => {
+        expect(revengeOfThePancakes.solve('-+')).toBe(1);
     });
 
-    test('three', () => {
-        expect(revengeOfThePancakes.solve('three')).toBe('three');
+    test('+-', () => {
+        expect(revengeOfThePancakes.solve('+-')).toBe(2);
     });
 
-    test('four', () => {
-        expect(revengeOfThePancakes.solve('four')).toBe('four');
+    test('+++', () => {
+        expect(revengeOfThePancakes.solve('+++')).toBe(0);
+    });
+
+    test('--+-', () => {
+        expect(revengeOfThePancakes.solve('--+-')).toBe(3);
     });
 });
 
 describe('solveInputs', () => {
     test('sample.in', () => {
         expect(
-            revengeOfThePancakes.solveInputs(`3
-one
-two
-three`.split(/\r?\n/))
+            revengeOfThePancakes.solveInputs(`5
+-
+-+
++-
++++
+--+-`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'Case #1: one',
-                'Case #2: two',
-                'Case #3: three',
+                'Case #1: 1',
+                'Case #2: 1',
+                'Case #3: 2',
+                'Case #4: 0',
+                'Case #5: 3',
             ]
         );
     });
