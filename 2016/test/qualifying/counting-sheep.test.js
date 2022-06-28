@@ -3,52 +3,64 @@ const countingSheep = require('../../qualifying/counting-sheep/index');
 describe('splitInput', () => {
     test('sample.in', () => {
         expect(
-            countingSheep.splitInput(`3
-one
-two
-three`.split(/\r?\n/))
+            countingSheep.splitInput(`5
+0
+1
+2
+11
+1692`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'one',
-                'two',
-                'three',
+                0,
+                1,
+                2,
+                11,
+                1692,
             ]
         );
     });
 });
 
 describe('solve', () => {
-    test('one', () => {
-        expect(countingSheep.solve('one')).toBe('one');
+    test('0', () => {
+        expect(countingSheep.solve(0)).toBe('INSOMNIA');
     });
 
-    test('two', () => {
-        expect(countingSheep.solve('two')).toBe('two');
+    test('1', () => {
+        expect(countingSheep.solve(1)).toBe(10);
     });
 
-    test('three', () => {
-        expect(countingSheep.solve('three')).toBe('three');
+    test('2', () => {
+        expect(countingSheep.solve(2)).toBe(90);
     });
 
-    test('four', () => {
-        expect(countingSheep.solve('four')).toBe('four');
+    test('11', () => {
+        expect(countingSheep.solve(11)).toBe(110);
+    });
+
+    test('1692', () => {
+        expect(countingSheep.solve(1692)).toBe(5076);
     });
 });
 
 describe('solveInputs', () => {
     test('sample.in', () => {
         expect(
-            countingSheep.solveInputs(`3
-one
-two
-three`.split(/\r?\n/))
+            countingSheep.solveInputs(`5
+0
+1
+2
+11
+1692`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'Case #1: one',
-                'Case #2: two',
-                'Case #3: three',
+                'Case #1: INSOMNIA',
+                'Case #2: 10',
+                'Case #3: 90',
+                'Case #4: 110',
+                'Case #5: 5076',
             ]
         );
     });
