@@ -27,7 +27,7 @@ describe('solve', () => {
         expect(countingSheep.solve(0)).toBe('INSOMNIA');
     });
 
-    test('1', () => {
+    test.only('1', () => {
         expect(countingSheep.solve(1)).toBe(10);
     });
 
