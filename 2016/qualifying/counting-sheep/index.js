@@ -7,6 +7,9 @@ const splitInput = input => input.slice(1).map(Number);
  * Accepts a single input case and returns the result as a string.
  */
 const solve = input => {
+    if (0 === input) {
+        return 'INSOMNIA';
+    }
     return input;
 };
 

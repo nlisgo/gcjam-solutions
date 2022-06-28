@@ -23,7 +23,7 @@ describe('splitInput', () => {
 });
 
 describe('solve', () => {
-    test('0', () => {
+    test.only('0', () => {
         expect(countingSheep.solve(0)).toBe('INSOMNIA');
     });
 
