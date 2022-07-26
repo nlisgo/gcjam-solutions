@@ -28,13 +28,12 @@ const solve = input => {
     ];
 
     for (let i = 0; i < r-1; i++) {
-        card.push(z);
-        card.push(y);
+        card.push(z, y);
     }
 
     card.push(z);
 
-	return card.join("\n");
+    return card.join("\n");
 };
 
 /**
