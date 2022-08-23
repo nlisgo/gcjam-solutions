@@ -33,6 +33,14 @@ describe('solve', () => {
     test("[3, 'pliers', ['hammer', 'screwdriver', 'pliers', 'wrench', 'spanner', 'pliers', 'pliers']]", () => {
         expect(indexOfNearest.solve([3, 'pliers', ['hammer', 'screwdriver', 'pliers', 'wrench', 'spanner', 'pliers', 'pliers']])).toBe(2);
     });
+
+    test("[4, 'pliers', ['hammer', 'screwdriver', 'pliers', 'wrench', 'spanner', 'pliers', 'pliers']]", () => {
+        expect(indexOfNearest.solve([4, 'pliers', ['hammer', 'screwdriver', 'pliers', 'wrench', 'spanner', 'pliers', 'pliers']])).toBe(5);
+    });
+
+    test("[0, 'drill', ['spanner', 'spanner', 'wrench', 'hammer']]", () => {
+        expect(indexOfNearest.solve([0, 'drill', ['spanner', 'spanner', 'wrench', 'hammer']])).toBe(-1);
+    });
 });
 
 describe('solveInputs', () => {

@@ -17,18 +17,20 @@ const splitInput = input => {
 const solve = input => {
     [start, needle, haystack] = input;
 
-    let found = false;
-    let nearestPos = 0;
+    let nearestPos = -1;
     let offset = -1;
 
-    while (!found) {
+    while (nearestPos < 0) {
         offset++;
-        if (haystack[start - offset] === needle) {
-            found = true;
+
+        if (haystack[start - offset] === undefined && haystack[start + offset] === undefined) {
+            break;
+        }
+
+        if (haystack[start - offset] !== undefined && haystack[start - offset] === needle) {
             nearestPos = start - offset;
-        } else if (haystack[start + offset] === needle) {
-            found = true;
-            nearestPos = start - offset;
+        } else if (haystack[start + offset] !== undefined && haystack[start + offset] === needle) {
+            nearestPos = start + offset;
         }
     }
 
