@@ -15,7 +15,24 @@ const splitInput = input => {
  * Accepts a single input case and returns the result as a string.
  */
 const solve = input => {
-    return input;
+    [start, needle, haystack] = input;
+
+    let found = false;
+    let nearestPos = 0;
+    let offset = -1;
+
+    while (!found) {
+        offset++;
+        if (haystack[start - offset] === needle) {
+            found = true;
+            nearestPos = start - offset;
+        } else if (haystack[start + offset] === needle) {
+            found = true;
+            nearestPos = start - offset;
+        }
+    }
+
+    return nearestPos;
 };
 
 /**

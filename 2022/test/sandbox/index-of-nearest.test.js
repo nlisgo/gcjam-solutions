@@ -1,7 +1,7 @@
 const indexOfNearest = require('../../sandbox/index-of-nearest/index');
 
 describe('splitInput', () => {
-    test.only('sample.in', () => {
+    test('sample.in', () => {
         expect(
             indexOfNearest.splitInput(`3
 4 0 spanner
