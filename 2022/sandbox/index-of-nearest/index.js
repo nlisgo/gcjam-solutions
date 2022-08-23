@@ -18,11 +18,9 @@ const solve = input => {
     [start, needle, haystack] = input;
 
     let nearestPos = -1;
-    let offset = -1;
+    let offset = 0;
 
     while (nearestPos < 0) {
-        offset++;
-
         if (haystack[start - offset] === undefined && haystack[start + offset] === undefined) {
             break;
         }
@@ -32,6 +30,8 @@ const solve = input => {
         } else if (haystack[start + offset] !== undefined && haystack[start + offset] === needle) {
             nearestPos = start + offset;
         }
+
+        offset++;
     }
 
     return nearestPos;
