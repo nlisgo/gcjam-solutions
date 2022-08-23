@@ -112,3 +112,24 @@ docker run -it -v $(pwd):/app -w /app/test node npm test round-1b/pancake-deque.
 ```
 
 <!-- problem-end: round-1b:pancake-deque -->
+## Sandbox
+
+<!-- stage-start: sandbox -->
+
+### Index of Nearest
+
+<!-- problem-start: sandbox:index-of-nearest -->
+
+```
+cat ./sandbox/index-of-nearest/sample.in | docker run -i -v $(pwd):/app -w /app/sandbox/index-of-nearest node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test sandbox/index-of-nearest.test.js
+```
+
+<!-- problem-end: sandbox:index-of-nearest -->
+
+<!-- stage-end: sandbox -->
