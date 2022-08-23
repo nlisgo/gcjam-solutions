@@ -1,7 +1,15 @@
 /**
  * Accepts an array of lines and organises into separate cases.
  */
-const splitInput = input => input.slice(1);
+const splitInput = input => {
+    const cases = [];
+    for (let i = 1; i < input.length; i += 2) {
+        [_, start, needle] = input[i].split(' ').map(j => !isNaN(j) ? Number(j) : j);
+        cases.push([start, needle, input[i + 1].split(' ')]);
+    }
+
+    return cases;
+};
 
 /**
  * Accepts a single input case and returns the result as a string.
