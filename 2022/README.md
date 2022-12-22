@@ -112,3 +112,56 @@ docker run -it -v $(pwd):/app -w /app/test node npm test round-1b/pancake-deque.
 ```
 
 <!-- problem-end: round-1b:pancake-deque -->
+## Advent of Code
+
+<!-- stage-start: advent-of-code -->
+
+### 01. Calorie Counting
+
+<!-- problem-start: advent-of-code:01-calorie-counting -->
+
+```
+cat ./advent-of-code/01-calorie-counting/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/01-calorie-counting node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/01-calorie-counting.test.js
+```
+
+<!-- problem-end: advent-of-code:01-calorie-counting -->
+
+### 02. Rock Paper Scissors
+
+<!-- problem-start: advent-of-code:02-rock-paper-scissors -->
+
+```
+cat ./advent-of-code/02-rock-paper-scissors/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/02-rock-paper-scissors node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/02-rock-paper-scissors.test.js
+```
+
+<!-- problem-end: advent-of-code:02-rock-paper-scissors -->
+
+### 03. Rucksack Rorganization
+
+<!-- problem-start: advent-of-code:03-rucksack-reorganization -->
+
+```
+cat ./advent-of-code/03-rucksack-reorganization/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/03-rucksack-reorganization node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/03-rucksack-reorganization.test.js
+```
+
+<!-- problem-end: advent-of-code:03-rucksack-reorganization -->
+
+<!-- stage-end: advent-of-code -->
