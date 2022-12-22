@@ -164,4 +164,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/03-rucks
 
 <!-- problem-end: advent-of-code:03-rucksack-reorganization -->
 
+### 04. Camp Cleanup
+
+<!-- problem-start: advent-of-code:04-camp-cleanup -->
+
+```
+cat ./advent-of-code/04-camp-cleanup/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/04-camp-cleanup node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/04-camp-cleanup.test.js
+```
+
+<!-- problem-end: advent-of-code:04-camp-cleanup -->
+
 <!-- stage-end: advent-of-code -->
