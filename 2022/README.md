@@ -180,4 +180,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/04-camp-
 
 <!-- problem-end: advent-of-code:04-camp-cleanup -->
 
+### 05. Supply Stacks
+
+<!-- problem-start: advent-of-code:05-supply-stacks -->
+
+```
+cat ./advent-of-code/05-supply-stacks/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/05-supply-stacks node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/05-supply-stacks.test.js
+```
+
+<!-- problem-end: advent-of-code:05-supply-stacks -->
+
 <!-- stage-end: advent-of-code -->
