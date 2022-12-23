@@ -212,4 +212,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/06-tunin
 
 <!-- problem-end: advent-of-code:06-tuning-trouble -->
 
+### 07. No Space Left On Device
+
+<!-- problem-start: advent-of-code:07-no-space-left-on-device -->
+
+```
+cat ./advent-of-code/07-no-space-left-on-device/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/07-no-space-left-on-device node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/07-no-space-left-on-device.test.js
+```
+
+<!-- problem-end: advent-of-code:07-no-space-left-on-device -->
+
 <!-- stage-end: advent-of-code -->
