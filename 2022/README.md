@@ -196,4 +196,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/05-suppl
 
 <!-- problem-end: advent-of-code:05-supply-stacks -->
 
+### 06. TuningTrouble
+
+<!-- problem-start: advent-of-code:06-tuning-trouble -->
+
+```
+cat ./advent-of-code/06-tuning-trouble/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/06-tuning-trouble node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/06-tuning-trouble.test.js
+```
+
+<!-- problem-end: advent-of-code:06-tuning-trouble -->
+
 <!-- stage-end: advent-of-code -->
