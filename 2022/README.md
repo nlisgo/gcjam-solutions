@@ -228,4 +228,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/07-no-sp
 
 <!-- problem-end: advent-of-code:07-no-space-left-on-device -->
 
+### 08. Treetop Tree House
+
+<!-- problem-start: advent-of-code:08-treetop-tree-house -->
+
+```
+cat ./advent-of-code/08-treetop-tree-house/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/08-treetop-tree-house node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/08-treetop-tree-house.test.js
+```
+
+<!-- problem-end: advent-of-code:08-treetop-tree-house -->
+
 <!-- stage-end: advent-of-code -->
