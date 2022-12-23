@@ -5,7 +5,7 @@ const splitInput = input => {
     const rows = input.map(i => i.split('').map(Number));
     const cols = [];
 
-    for (let i = 0; i < rows[0].length; i++) {
+    for (let i = 0; i < input.length; i++) {
         const col = [];
         for (let j = 0; j < rows.length; j++) {
             col.push(rows[j][i]);
