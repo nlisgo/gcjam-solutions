@@ -115,7 +115,7 @@ describe('scenicScore', () => {
     });
 
     test('scenicScoreRows, scenicScoreCols, 1, 1', () => {
-        expect(treetopTreeHouse.scenicScore(scenicScoreRows, scenicScoreCols, 1, 1)).toBe(0);
+        expect(treetopTreeHouse.scenicScore(scenicScoreRows, scenicScoreCols, 1, 1)).toBe(1);
     });
 
     test('scenicScoreRows, scenicScoreCols, 1, 2', () => {
