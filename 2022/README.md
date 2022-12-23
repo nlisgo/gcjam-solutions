@@ -244,4 +244,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/08-treet
 
 <!-- problem-end: advent-of-code:08-treetop-tree-house -->
 
+### 09. Rope Bradvent-of-code:09-rope-bridgege
+
+<!-- problem-start: advent-of-code:09-rope-bridge -->
+
+```
+cat ./advent-of-code/09-rope-bridge/sample.in | docker run -i -v $(pwd):/app -w /app/advent-of-code/09-rope-bridge node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test advent-of-code/09-rope-bridge.test.js
+```
+
+<!-- problem-end: advent-of-code:09-rope-bridge -->
+
 <!-- stage-end: advent-of-code -->
