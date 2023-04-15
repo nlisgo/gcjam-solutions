@@ -1,7 +1,7 @@
 const rainbowSort = require('../../round-a/rainbow-sort/index');
 
 describe('splitInput', () => {
-    test('sample.in', () => {
+    test.only('sample.in', () => {
         expect(
             rainbowSort.splitInput(`2
 4

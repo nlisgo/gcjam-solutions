@@ -1,7 +1,14 @@
 /**
  * Accepts an array of lines and organises into separate cases.
  */
-const splitInput = input => input.slice(1);
+const splitInput = input => {
+    const inputs = [];
+    for (let i = 2; i <= input.length; i += 2) {
+        inputs.push(input[i].split(' ').map(Number));
+    }
+
+    return inputs;
+};
 
 /**
  * Accepts a single input case and returns the result as a string.
@@ -23,7 +30,7 @@ const solveInputs = inputs => {
 
 /**
  * If stdin is detected then pass all lines to solveInputs.
- * 
+ *
  * Send results to stdout.
  */
 if (!Boolean(process.stdin.isTTY)) {
