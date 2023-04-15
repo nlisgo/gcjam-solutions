@@ -3,52 +3,40 @@ const asciiArt = require('../../round-a/ascii-art/index');
 describe('splitInput', () => {
     test('sample.in', () => {
         expect(
-            asciiArt.splitInput(`3
-one
-two
-three`.split(/\r?\n/))
+            asciiArt.splitInput(`2
+5
+31`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'one',
-                'two',
-                'three',
+                5,
+                31,
             ]
         );
     });
 });
 
 describe('solve', () => {
-    test('one', () => {
-        expect(asciiArt.solve('one')).toBe('one');
+    test('5', () => {
+        expect(asciiArt.solve(5)).toBe('E');
     });
 
     test('two', () => {
-        expect(asciiArt.solve('two')).toBe('two');
-    });
-
-    test('three', () => {
-        expect(asciiArt.solve('three')).toBe('three');
-    });
-
-    test('four', () => {
-        expect(asciiArt.solve('four')).toBe('four');
+        expect(asciiArt.solve(31)).toBe('C');
     });
 });
 
 describe('solveInputs', () => {
     test('sample.in', () => {
         expect(
-            asciiArt.solveInputs(`3
-one
-two
-three`.split(/\r?\n/))
+            asciiArt.solveInputs(`2
+5
+31`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'Case #1: one',
-                'Case #2: two',
-                'Case #3: three',
+                'Case #1: E',
+                'Case #2: C',
             ]
         );
     });
