@@ -69,4 +69,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test round-a/rainbow-sort.te
 
 <!-- problem-end: round-a:rainbow-sort -->
 
+### ASCII Art
+
+<!-- problem-start: round-a:ascii-art -->
+
+```
+cat ./round-a/ascii-art/sample.in | docker run -i -v $(pwd):/app -w /app/round-a/ascii-art node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test round-a/ascii-art.test.js
+```
+
+<!-- problem-end: round-a:ascii-art -->
+
 <!-- stage-end: round-a -->
