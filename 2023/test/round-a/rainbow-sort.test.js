@@ -3,52 +3,44 @@ const rainbowSort = require('../../round-a/rainbow-sort/index');
 describe('splitInput', () => {
     test('sample.in', () => {
         expect(
-            rainbowSort.splitInput(`3
-one
-two
-three`.split(/\r?\n/))
+            rainbowSort.splitInput(`2
+4
+3 8 8 2
+5
+3 8 2 2 8`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'one',
-                'two',
-                'three',
+                [3, 8, 8, 2],
+                [3, 8, 2, 2, 8],
             ]
         );
     });
 });
 
 describe('solve', () => {
-    test('one', () => {
-        expect(rainbowSort.solve('one')).toBe('one');
+    test('[3, 8, 8, 2]', () => {
+        expect(rainbowSort.solve([3, 8, 8, 2])).toBe('3 8 2');
     });
 
-    test('two', () => {
-        expect(rainbowSort.solve('two')).toBe('two');
-    });
-
-    test('three', () => {
-        expect(rainbowSort.solve('three')).toBe('three');
-    });
-
-    test('four', () => {
-        expect(rainbowSort.solve('four')).toBe('four');
+    test('[3, 8, 2, 2, 8]', () => {
+        expect(rainbowSort.solve([3, 8, 2, 2, 8])).toBe('IMPOSSIBLE');
     });
 });
 
 describe('solveInputs', () => {
     test('sample.in', () => {
         expect(
-            rainbowSort.solveInputs(`3
-one
-two
-three`.split(/\r?\n/))
+            rainbowSort.solveInputs(`2
+4
+3 8 8 2
+5
+3 8 2 2 8`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'Case #1: one',
-                'Case #2: two',
-                'Case #3: three',
+                'Case #1: 3 8 2',
+                'Case #2: IMPOSSIBLE',
             ]
         );
     });
