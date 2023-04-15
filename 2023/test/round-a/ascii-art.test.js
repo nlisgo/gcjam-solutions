@@ -21,7 +21,7 @@ describe('solve', () => {
         expect(asciiArt.solve(5)).toBe('E');
     });
 
-    test('two', () => {
+    test('31', () => {
         expect(asciiArt.solve(31)).toBe('C');
     });
 });
