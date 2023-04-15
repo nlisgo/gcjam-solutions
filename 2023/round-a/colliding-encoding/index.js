@@ -1,7 +1,29 @@
 /**
  * Accepts an array of lines and organises into separate cases.
  */
-const splitInput = input => input.slice(1);
+const splitInput = input => {
+    const inputs = [];
+    for (let i = 1; i < input.length; i++) {
+        const prepareInput = [
+            input[i].split(' ').map(Number),
+        ];
+        const strings = [];
+        for (let j = 0; j < Number(input[i + 1]); j++) {
+            strings.push(input[j + i + 2]);
+        }
+
+        prepareInput.push(strings);
+        inputs.push(prepareInput);
+
+        i += strings.length + 1;
+    }
+
+    return inputs;
+};
+
+const encodeWord = (word, encoding) => {
+    return 0;
+};
 
 /**
  * Accepts a single input case and returns the result as a string.
@@ -23,7 +45,7 @@ const solveInputs = inputs => {
 
 /**
  * If stdin is detected then pass all lines to solveInputs.
- * 
+ *
  * Send results to stdout.
  */
 if (!Boolean(process.stdin.isTTY)) {
@@ -43,6 +65,7 @@ if (!Boolean(process.stdin.isTTY)) {
  * Export all functions that we want to test.
  */
 module.exports = {
+    encodeWord,
 	splitInput,
 	solve,
 	solveInputs,

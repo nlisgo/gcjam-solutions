@@ -14,8 +14,7 @@ CDE
 3
 CDE
 DEF
-EFG
-`.split(/\r?\n/))
+EFG`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
@@ -29,6 +28,12 @@ EFG
                 ],
             ]
         );
+    });
+});
+
+describe('encodeWord', () => {
+    test.only('ABC, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+        expect(collidingEncoding.encodeWord('ABC', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('012');
     });
 });
 
