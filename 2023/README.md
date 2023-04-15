@@ -53,4 +53,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test round-a/illumination-op
 
 <!-- problem-end: round-a:illumination-optimization -->
 
+### Rainbow Sort
+
+<!-- problem-start: round-a:rainbow-sort -->
+
+```
+cat ./round-a/rainbow-sort/sample.in | docker run -i -v $(pwd):/app -w /app/round-a/rainbow-sort node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test round-a/rainbow-sort.test.js
+```
+
+<!-- problem-end: round-a:rainbow-sort -->
+
 <!-- stage-end: round-a -->
