@@ -13,8 +13,20 @@ const splitInput = input => {
 /**
  * Accepts a single input case and returns the result as a string.
  */
-const solve = input => {
-    return input;
+const solve = (M, R, N, X) => {
+    // Ends of freeway are not lit.
+    if (X[0] > R || X[X.length - 1] + R < M) {
+        return 'IMPOSSIBLE';
+    }
+
+    // Check if any lights more than double R apart.
+    for (let i = 1; i < X.length; i++) {
+        if (X[i] - X[i - 1] > 2*R) {
+            return 'IMPOSSIBLE';
+        }
+    }
+
+    return X.length;
 };
 
 /**

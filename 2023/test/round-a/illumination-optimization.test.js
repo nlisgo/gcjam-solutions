@@ -22,16 +22,16 @@ describe('splitInput', () => {
 });
 
 describe('solve', () => {
-    test('[10, 3, 3, [2, 7, 9]]', () => {
+    test('10, 3, 3, [2, 7, 9]', () => {
         expect(illuminationOptimization.solve(10, 3, 3, [2, 7, 9])).toBe(2);
     });
 
-    test.only('[10, 2, 3, [2, 7, 9]]', () => {
-        expect(illuminationOptimization.solve('two')).toBe('IMPOSSIBLE');
+    test.only('10, 2, 3, [2, 7, 9]', () => {
+        expect(illuminationOptimization.solve(10, 2, 3, [2, 7, 9])).toBe('IMPOSSIBLE');
     });
 
-    test('[10, 2, 4, [2, 3, 7, 9]]', () => {
-        expect(illuminationOptimization.solve([10, 2, 4, [2, 3, 7, 9]])).toBe(3);
+    test('10, 2, 4, [2, 3, 7, 9]', () => {
+        expect(illuminationOptimization.solve(10, 2, 4, [2, 3, 7, 9])).toBe(4);
     });
 });
 
@@ -50,7 +50,7 @@ describe('solveInputs', () => {
             [
                 'Case #1: 2',
                 'Case #2: IMPOSSIBLE',
-                'Case #3: 3',
+                'Case #3: 4',
             ]
         );
     });
