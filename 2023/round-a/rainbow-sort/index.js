@@ -14,7 +14,21 @@ const splitInput = input => {
  * Accepts a single input case and returns the result as a string.
  */
 const solve = input => {
-    return input;
+    // Get rid of adjacent duplicates and if resultant array has no duplicates it is possible.
+    const removeAdjacentDuplicates = [input[0]];
+    for (let i = 1; i < input.length; i ++) {
+        if (input[i] !== input[i - 1]) {
+            removeAdjacentDuplicates.push(input[i]);
+        }
+    }
+
+    const removeAllDuplicates = [...new Set(removeAdjacentDuplicates)];
+
+    if (removeAllDuplicates.length < removeAdjacentDuplicates.length) {
+        return 'IMPOSSIBLE';
+    }
+
+    return removeAllDuplicates.join(' ');
 };
 
 /**
