@@ -1,7 +1,7 @@
 const illuminationOptimization = require('../../round-a/illumination-optimization/index');
 
 describe('splitInput', () => {
-    test.only('sample.in', () => {
+    test('sample.in', () => {
         expect(
             illuminationOptimization.splitInput(`3
 10 3 3
@@ -26,7 +26,7 @@ describe('solve', () => {
         expect(illuminationOptimization.solve(10, 3, 3, [2, 7, 9])).toBe(2);
     });
 
-    test.only('10, 2, 3, [2, 7, 9]', () => {
+    test('10, 2, 3, [2, 7, 9]', () => {
         expect(illuminationOptimization.solve(10, 2, 3, [2, 7, 9])).toBe('IMPOSSIBLE');
     });
 
