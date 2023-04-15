@@ -37,4 +37,20 @@ docker run -it -v $(pwd):/app -w /app/test node npm test round-a/colliding-encod
 
 <!-- problem-end: round-a:colliding-encoding -->
 
+### Illumination Optimization
+
+<!-- problem-start: round-a:illumination-optimization -->
+
+```
+cat ./round-a/illumination-optimization/sample.in | docker run -i -v $(pwd):/app -w /app/round-a/illumination-optimization node node index.js
+```
+
+to run the tests:
+
+```
+docker run -it -v $(pwd):/app -w /app/test node npm test round-a/illumination-optimization.test.js
+```
+
+<!-- problem-end: round-a:illumination-optimization -->
+
 <!-- stage-end: round-a -->
