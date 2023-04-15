@@ -4,7 +4,7 @@
 const splitInput = input => {
     const inputs = [];
     for (let i = 1; i < input.length; i += 2) {
-        inputs.push([...input[i].split(' ').map(Number), input[i + 1].split(' ').map(Number)]);
+        inputs.push([...input[i].split(' ').map(Number).slice(0, 2), input[i + 1].split(' ').map(Number)]);
     }
 
     return inputs;
@@ -13,7 +13,7 @@ const splitInput = input => {
 /**
  * Accepts a single input case and returns the result as a string.
  */
-const solve = (M, R, N, X) => {
+const solve = (M, R, X) => {
     // Ends of freeway are not lit.
     if (X[0] > R || X[X.length - 1] + R < M) {
         return 'IMPOSSIBLE';
@@ -25,6 +25,8 @@ const solve = (M, R, N, X) => {
             return 'IMPOSSIBLE';
         }
     }
+
+    const necessary = [];
 
     return X.length;
 };

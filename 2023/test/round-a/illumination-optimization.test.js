@@ -13,25 +13,25 @@ describe('splitInput', () => {
         )
         .toStrictEqual(
             [
-                [10, 3, 3, [2, 7, 9]],
-                [10, 2, 3, [2, 7, 9]],
-                [10, 2, 4, [2, 3, 7, 9]],
+                [10, 3, [2, 7, 9]],
+                [10, 2, [2, 7, 9]],
+                [10, 2, [2, 3, 7, 9]],
             ]
         );
     });
 });
 
 describe('solve', () => {
-    test('10, 3, 3, [2, 7, 9]', () => {
-        expect(illuminationOptimization.solve(10, 3, 3, [2, 7, 9])).toBe(2);
+    test('10, 3, [2, 7, 9]', () => {
+        expect(illuminationOptimization.solve(10, 3, [2, 7, 9])).toBe(2);
     });
 
-    test('10, 2, 3, [2, 7, 9]', () => {
-        expect(illuminationOptimization.solve(10, 2, 3, [2, 7, 9])).toBe('IMPOSSIBLE');
+    test('10, 2, [2, 7, 9]', () => {
+        expect(illuminationOptimization.solve(10, 2, [2, 7, 9])).toBe('IMPOSSIBLE');
     });
 
     test('10, 2, 4, [2, 3, 7, 9]', () => {
-        expect(illuminationOptimization.solve(10, 2, 4, [2, 3, 7, 9])).toBe(4);
+        expect(illuminationOptimization.solve(10, 2, [2, 3, 7, 9])).toBe(4);
     });
 });
 
