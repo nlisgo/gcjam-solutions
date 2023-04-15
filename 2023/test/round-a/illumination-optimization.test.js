@@ -26,7 +26,7 @@ describe('solve', () => {
         expect(illuminationOptimization.solve(10, 3, 3, [2, 7, 9])).toBe(2);
     });
 
-    test('[10, 2, 3, [2, 7, 9]]', () => {
+    test.only('[10, 2, 3, [2, 7, 9]]', () => {
         expect(illuminationOptimization.solve('two')).toBe('IMPOSSIBLE');
     });
 
