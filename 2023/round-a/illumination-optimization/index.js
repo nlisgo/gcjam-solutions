@@ -30,14 +30,9 @@ const solve = (M, R, X) => {
 
     let target = 0;
     while (target < M) {
-        // Find last light that can reach the target.
-        for (let i = X.length - 1; i >= 0; i--) {
-            if (X[i] - R <= target) {
-                necessary.push(X[i]);
-                target = X[i] + R;
-                break;
-            }
-        }
+        const targetMet = Math.max(...X.filter((i) => i - R <= target));
+        necessary.push(targetMet);
+        target = targetMet + R;
     }
 
     return necessary.length;
