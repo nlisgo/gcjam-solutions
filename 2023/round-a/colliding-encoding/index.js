@@ -21,15 +21,16 @@ const splitInput = input => {
     return inputs;
 };
 
-const encodeWord = (word, encoding) => {
-    return 0;
-};
+const encodeWord = (word, encoding) => word.split('').map(c => encoding['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(c)].toString()).join('');
 
 /**
  * Accepts a single input case and returns the result as a string.
  */
-const solve = input => {
-    return input;
+const solve = (encoding, words) => {
+    const uniqueWords = [...new Set(words)];
+    const encodedWords = uniqueWords.map(word => encodeWord(word, encoding));
+    const uniqueEncodedWords = [...new Set(encodedWords)];
+    return encodedWords.length > uniqueEncodedWords.length ? 'YES' : 'NO';
 };
 
 /**
@@ -38,7 +39,7 @@ const solve = input => {
 const solveInputs = inputs => {
 	const cases = [];
 	splitInput(inputs).forEach((data, i) => {
-		cases.push(`Case #${i+1}: ${solve(data)}`);
+		cases.push(`Case #${i+1}: ${solve(...data)}`);
 	});
 	return cases;
 };

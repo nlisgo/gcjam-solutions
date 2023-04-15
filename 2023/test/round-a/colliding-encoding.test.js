@@ -1,7 +1,7 @@
 const collidingEncoding = require('../../round-a/colliding-encoding/index');
 
 describe('splitInput', () => {
-    test.only('sample.in', () => {
+    test('sample.in', () => {
         expect(
             collidingEncoding.splitInput(`2
 0 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
@@ -32,8 +32,28 @@ EFG`.split(/\r?\n/))
 });
 
 describe('encodeWord', () => {
-    test.only('ABC, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+    test('ABC, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
         expect(collidingEncoding.encodeWord('ABC', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('012');
+    });
+
+    test('BC, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+        expect(collidingEncoding.encodeWord('BC', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('12');
+    });
+
+    test('BCD, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+        expect(collidingEncoding.encodeWord('BCD', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('123');
+    });
+
+    test('CDE, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+        expect(collidingEncoding.encodeWord('CDE', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('233');
+    });
+
+    test('DEF, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+        expect(collidingEncoding.encodeWord('DEF', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('333');
+    });
+
+    test('EFG, [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],', () => {
+        expect(collidingEncoding.encodeWord('EFG', [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])).toBe('333');
     });
 });
 
