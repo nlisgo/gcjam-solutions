@@ -1,7 +1,7 @@
 const illuminationOptimization = require('../../round-a/illumination-optimization/index');
 
 describe('splitInput', () => {
-    test('sample.in', () => {
+    test.only('sample.in', () => {
         expect(
             illuminationOptimization.splitInput(`3
 10 3 3
