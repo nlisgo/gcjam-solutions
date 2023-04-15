@@ -28,7 +28,19 @@ const solve = (M, R, X) => {
 
     const necessary = [];
 
-    return X.length;
+    let target = 0;
+    while (target < M) {
+        // Find last light that can reach the target.
+        for (let i = X.length - 1; i >= 0; i--) {
+            if (X[i] - R <= target) {
+                necessary.push(X[i]);
+                target = X[i] + R;
+                break;
+            }
+        }
+    }
+
+    return necessary.length;
 };
 
 /**
@@ -37,7 +49,7 @@ const solve = (M, R, X) => {
 const solveInputs = inputs => {
 	const cases = [];
 	splitInput(inputs).forEach((data, i) => {
-		cases.push(`Case #${i+1}: ${solve(data)}`);
+		cases.push(`Case #${i+1}: ${solve(...data)}`);
 	});
 	return cases;
 };
