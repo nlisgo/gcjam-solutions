@@ -4,35 +4,34 @@ describe('splitInput', () => {
     test('sample.in', () => {
         expect(
             illuminationOptimization.splitInput(`3
-one
-two
-three`.split(/\r?\n/))
+10 3 3
+2 7 9
+10 2 3
+2 7 9
+10 2 4
+2 3 7 9`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'one',
-                'two',
-                'three',
+                [10, 3, 3, [2, 7, 9]],
+                [10, 2, 3, [2, 7, 9]],
+                [10, 2, 4, [2, 3, 7, 9]],
             ]
         );
     });
 });
 
 describe('solve', () => {
-    test('one', () => {
-        expect(illuminationOptimization.solve('one')).toBe('one');
+    test('[10, 3, 3, [2, 7, 9]]', () => {
+        expect(illuminationOptimization.solve(10, 3, 3, [2, 7, 9])).toBe(2);
     });
 
-    test('two', () => {
-        expect(illuminationOptimization.solve('two')).toBe('two');
+    test('[10, 2, 3, [2, 7, 9]]', () => {
+        expect(illuminationOptimization.solve('two')).toBe('IMPOSSIBLE');
     });
 
-    test('three', () => {
-        expect(illuminationOptimization.solve('three')).toBe('three');
-    });
-
-    test('four', () => {
-        expect(illuminationOptimization.solve('four')).toBe('four');
+    test('[10, 2, 4, [2, 3, 7, 9]]', () => {
+        expect(illuminationOptimization.solve([10, 2, 4, [2, 3, 7, 9]])).toBe(3);
     });
 });
 
@@ -40,15 +39,18 @@ describe('solveInputs', () => {
     test('sample.in', () => {
         expect(
             illuminationOptimization.solveInputs(`3
-one
-two
-three`.split(/\r?\n/))
+10 3 3
+2 7 9
+10 2 3
+2 7 9
+10 2 4
+2 3 7 9`.split(/\r?\n/))
         )
         .toStrictEqual(
             [
-                'Case #1: one',
-                'Case #2: two',
-                'Case #3: three',
+                'Case #1: 2',
+                'Case #2: IMPOSSIBLE',
+                'Case #3: 3',
             ]
         );
     });
